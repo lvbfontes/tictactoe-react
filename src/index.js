@@ -10,6 +10,10 @@ function Square(props) {
     );
 }
 
+const firstRow = [0, 1, 2];
+const secondRow = [3, 4, 5];
+const thirdRow = [6, 7, 8];
+
 class Board extends React.Component {
     renderSquare(i) {
         return (
@@ -24,19 +28,25 @@ class Board extends React.Component {
         return (
             <div>
                 <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
+                    {
+                        firstRow.map((value) => {
+                            return this.renderSquare(value)
+                        })
+                    }
                 </div>
                 <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
+                    {
+                        secondRow.map((value) => {
+                            return this.renderSquare(value)
+                        })
+                    }
                 </div>
                 <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
+                    {
+                        thirdRow.map((value, index) => {
+                            return this.renderSquare(value)
+                        })
+                    }
                 </div>
             </div>
         );
